@@ -1,1 +1,1 @@
-include ':app', ':sample', ':hello'
+include ':app', ':sample', ':hello', ':permissionnew', ':permissionold'
