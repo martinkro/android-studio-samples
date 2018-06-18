@@ -2,9 +2,11 @@ package com.personal.tools.permissionnew;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -20,14 +22,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MobileAds.initialize(this, getResources().getString(R.string.admob_app_id));
+
         // Load an ad into the AdMob banner view.
         AdView adView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                .setRequestAgent("android_studio:ad_template").build();
+        AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
         // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
-        Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
+
+        //getApplicationContext().getUserId();
+        try{
+            int[] gids = getPackageManager().getPackageGids("com.personal.tools.permissionnew");
+            for(int gid:gids){
+                Log.e("PermissionNew","GID:" + gid);
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
 
