@@ -7,9 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    <Button
+        android:id="@+id/getInstalledPackages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHello"
+        android:text="@string/get_installed_packages"
+        />
 
     <!-- view for AdMob Banner Ad -->
     <com.google.android.gms.ads.AdView
