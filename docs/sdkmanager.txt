@@ -1,0 +1,2 @@
+tools\bin\sdkmanager.bat --list --proxy=http --proxy_host=dev-proxy.oa.com --proxy_port=8080
+tools\bin\sdkmanager.bat "platforms;android-11" --proxy=http --proxy_host=dev-proxy.oa.com --proxy_port=8080
