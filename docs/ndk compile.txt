@@ -1,0 +1,16 @@
+1 llvm编译
+repo init -u https://android.googlesource.com/platform/manifest -b llvm
+
+替换.repo/manifests/default.xml 
+cp manifest_3362437.xml default.xml
+
+manifest_3362437.xml 在ndk-r14b的发布包里
+$NDK_ROOT/toolchains/llvm/prebuilt/windows-x86_64
+
+同步代码
+repo sync
+
+编译 python external/clang/build.py
+得到clang-dev
+
+http://embedsec.systems/toolchains/2016/04/01/How_to_build_Clang_toolchains_for_Android.html
